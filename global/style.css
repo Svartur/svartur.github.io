@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "roboto"; 
+  src: "C:\Users\andyt_000\Desktop\svartur.github.io\global\Roboto-Regular.ttf.";
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+li {
+  float: left;
+}
+
+li:last-child {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  font-family: "roboto";
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #262626;
+}
+       
+.active {
+  background-color: #0086b3;
+}
+
+body {
+  background-color: #262626;
+  margin: 0px; 
+  padding: 0;
+}
+
+h1 {
+  text-align: left;
+  color: #0086b3; 
+  font-family: "roboto";
+  font-size: 40px;
+}
+
+p {
+  text-align: left;
+  font-family: "roboto";
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.centerContent {
+  max-width: 700px;
+  margin: auto;
+  background: #262626;
+  padding: 10px;
+}
+
+.animation {
+  position: relative;
+  width:100%;
+  height:200px;
+}
+
+.verticalMenu {
+  width: 100%;
+}
+
+.verticalMenu a {
+  background-color: #262626;
+  color: #ffffff;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+  font-weight:bold;
+  font-family: "roboto";
+  font-size: 20px;
+  border-top: 1px solid #0086b3;
+}
+
+.verticalMenu:last-child {
+    border-bottom: 1px solid #0086b3;
+}
+
+.verticalMenu a:hover {
+  background-color: #0086b3;
+}
+
+.verticalGap {
+  height: 60px;
+  margin: 0px;
+}
