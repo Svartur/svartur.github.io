@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+  
+  <head>
+    <title> Random Lines </title>
+
+    <style>
+
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+      }
+
+      #mapDiv {
+        width: 100%;
+        height: 94%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #buttonDiv {
+        height: 6%;
+        min-height: 25px;
+      }
+
+      #button {
+        background-color: #e60000;
+        border: none;
+        color: white;
+        padding: 7px 7px;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        display: block;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+    </style>
+
+  </head>
+
+
+
+
+  <body>
+
+    <div id="buttonDiv"> <button id="button" onclick="myMap()" >Change line</button> </div>
+
+    <div id="mapDiv"></div>
+
+    <script>
+      function myMap() {
+        var vertex = [];
+        var center = new google.maps.LatLng(0, 0);
+
+        for (var i=0; i<100; i++) {
+          vertex[i] = new google.maps.LatLng((Math.random()*180)-90, (Math.random()*360)-180);
+        }
+
+        var mapCanvas = document.getElementById("mapDiv");
+        var mapOptions = {center: center, zoom: 2};
+        var map = new google.maps.Map(mapCanvas,mapOptions);
+
+        var flightPath = new google.maps.Polyline( 
+          {
+            path: vertex,
+            strokeColor: "#e60000",
+            strokeOpacity: 1,
+            strokeWeight: 2
+          }
+        );
+
+        flightPath.setMap(map);
+      }
+    </script>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEX9t6GRyvthpDNcFjjsCb_7JPx6WZwk0&callback=myMap"></script>
+
+
+  </body>
+</html>
