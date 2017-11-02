@@ -1,6 +1,11 @@
 @font-face {
   font-family: "roboto"; 
-  src: "C:\Users\andyt_000\Desktop\svartur.github.io\global\Roboto-Regular.ttf.";
+  src: "\global\Roboto-Regular.ttf.";
+}
+
+@font-face {
+  font-family: "roboto-slab"; 
+  src: "\global\Roboto-Slab.ttf.";
 }
 
 ul {
@@ -45,7 +50,7 @@ body {
 h1 {
   text-align: left;
   color: #0086b3; 
-  font-family: "roboto";
+  font-family: "roboto-slab";
   font-size: 40px;
 }
 
