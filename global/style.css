@@ -1,10 +1,10 @@
 @font-face {
-  font-family: "roboto"; 
+  font-family: roboto; 
   src: "/global/Roboto-Regular.ttf.";
 }
 
 @font-face {
-  font-family: "roboto-slab"; 
+  font-family: roboto-slab; 
   src: "/global/Roboto-Slab.ttf.";
 }
 
