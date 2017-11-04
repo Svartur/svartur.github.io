@@ -3,11 +3,6 @@
   src: "/global/Roboto-Regular.ttf";
 }
 
-@font-face {
-  font-family: roboto-slab; 
-  src: "/global/Roboto-Slab.ttf";
-}
-
 ul {
   list-style-type: none;
   margin: 0;
@@ -50,7 +45,7 @@ body {
 h1 {
   text-align: left;
   color: #0086b3; 
-  font-family: roboto-slab;
+  font-family: roboto;
   font-size: 40px;
 }
 
