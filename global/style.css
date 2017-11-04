@@ -28,7 +28,7 @@ li a {
   display: block;
   color: white;
   text-align: center;
-  font-family: "roboto";
+  font-family: roboto;
   padding: 14px 16px;
   text-decoration: none;
 }
@@ -50,13 +50,13 @@ body {
 h1 {
   text-align: left;
   color: #0086b3; 
-  font-family: "roboto-slab";
+  font-family: roboto-slab;
   font-size: 40px;
 }
 
 p {
   text-align: left;
-  font-family: "roboto";
+  font-family: roboto;
   font-size: 18px;
   color: #ffffff;
 }
@@ -85,7 +85,7 @@ p {
   padding: 12px;
   text-decoration: none;
   font-weight:bold;
-  font-family: "roboto";
+  font-family: roboto;
   font-size: 20px;
   border-top: 1px solid #0086b3;
 }
