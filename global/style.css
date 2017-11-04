@@ -1,11 +1,11 @@
 @font-face {
   font-family: roboto; 
-  src: "/global/Roboto-Regular.ttf.";
+  src: "/global/Roboto-Regular.ttf";
 }
 
 @font-face {
   font-family: roboto-slab; 
-  src: "/global/Roboto-Slab.ttf.";
+  src: "/global/Roboto-Slab.ttf";
 }
 
 ul {
