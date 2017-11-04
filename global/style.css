@@ -1,6 +1,6 @@
 @font-face {
   font-family: roboto; 
-  src: "/global/Roboto-Regular.ttf";
+  src: url(/global/Roboto-Regular.ttf);
 }
 
 ul {
