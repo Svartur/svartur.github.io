@@ -61,6 +61,13 @@ p {
   color: #ffffff;
 }
 
+.center_p {
+  text-align: center;
+  font-family: roboto;
+  font-size: 18px;
+  color: #ffffff;
+}
+
 .centerContent {
   max-width: 700px;
   margin: auto;
