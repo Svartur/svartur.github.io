@@ -17,7 +17,7 @@ function preload() {
   burgers[5] = loadImage("data/burger6.png");
   burgers[6] = loadImage("data/burger7.png");
   burgers[7] = loadImage("data/burger8.png");
-  galaxy =     loadImage("data/galaxy.jpg");
+  galaxy     = loadImage("data/galaxy.jpg");
 }
 
 function setup() {
@@ -28,7 +28,7 @@ function setup() {
   }
   galaxy.resize(width, height);
   imageMode(CENTER);
-  movingRange = (width+height)/5;
+  movingRange = (width+height)/4;
   
   for (var i=0; i<n; i++) {
     movingBurgers.push(new Burger());
