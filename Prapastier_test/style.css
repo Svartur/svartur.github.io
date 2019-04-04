@@ -1,8 +1,13 @@
 
 
+.otazka {
+	font-size: 3vw;
+	margin-top: 5px;
+	margin-bottom: 10px
+}
 
-.cisloOtazky {
-	font-size: 5vw
+.radioOdpoved {
+	font-size: 3vw;
 }
 
 .content {

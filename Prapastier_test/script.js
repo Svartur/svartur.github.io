@@ -1,6 +1,5 @@
 
 function odoslat() {
-	console.log("submiting...");
 
 	document.getElementById("btnSubmit").style.display = "none";
 	document.getElementById("dotaznik").style.display = "none";
