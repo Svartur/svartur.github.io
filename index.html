@@ -1,46 +1,123 @@
 <!DOCTYPE html>
+
 <html>
 
-  <head>
-    <title>Svartur</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="global/style.css">
+	<head>
+  	<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
 
-    <script language="javascript" type="text/javascript" src="global/p5.js"></script>
-    <script language="javascript" type="text/javascript" src="animation.js"></script>
+	<script src="script.js"></script>
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-3291551881887019",
-        enable_page_level_ads: true
-      });
-    </script>
-  </head>
 
-  <body>
+	<body onclick="checkButton()" >
 
-    <nav>
-      <ul>
-        <li><a class="active" href="index.html">Home</a></li>
-        <li><a href="about/index.html">About</a></li>
-        <li><a href="animations/index.html">Animations</a></li>
-        <li><a href="maps/index.html">Maps</a></li>
-        <li><a href="search/index.html">Search</a></li>
-      </ul>
-    </nav>
+		<div class="content">
 
-    <div class="centerContent">
-      <h1> Welcome to Svartur's super page!</h1>
+			<form id="dotaznik" style="max-width: 600px">
 
-      <p> Hi, this is my <i>svartur.github.io</i> page. My coding adventures online.</p>
+				<p style="font-size: 24px">Prosím, odpovedz na každú otázku čo najpravdivejšie. Odpovedaj zvolením možnosti, ktorá najviac vystihuje Tvoj postoj ku každému tvrdeniu. Prajem veľa šťastia!</p>
 
-      <div class="verticalGap"></div>
+			  <fieldset id="otazka1">
+			  	<p class="otazka">Pri kupovaní novej zváračky často pociťujem úzkosť a paranoju.</p>
+			    <input id="1.1" type="radio" name="ot1" class="radioOdpoved"> Áno <br>
+				  <input id="1.2" type="radio" name="ot1" class="radioOdpoved"> Skôr áno <br>
+				  <input id="1.3" type="radio" name="ot1" class="radioOdpoved"> Niečo medzi <br> 
+				  <input id="1.4" type="radio" name="ot1" class="radioOdpoved"> Skôr nie <br>
+				  <input id="1.5" type="radio" name="ot1" class="radioOdpoved"> Nie <br>
+			  </fieldset>
 
-      <div id="animationDiv" class="animation"></div>
+			  <br>
 
-    </div>
+			  <fieldset id="otazka2">
+			  	<p class="otazka">V detstve som preferoval kontakt s mimozemskou civilizáciou.</p>
+			    <input id="2.1" type="radio" name="ot2"> Áno <br>
+				  <input id="2.2" type="radio" name="ot2"> Skôr áno <br>
+				  <input id="2.3" type="radio" name="ot2"> Niečo medzi <br> 
+				  <input id="2.4" type="radio" name="ot2"> Skôr nie <br>
+				  <input id="2.5" type="radio" name="ot2"> Nie <br>
+			  </fieldset>
 
-  </body>
+			  <br>
 
+			  <fieldset id="otazka3">
+			  	<p class="otazka">Pri rektifikácií alidádovej libely dostávam cholerické záchvaty.</p>
+			    <input id="3.1" type="radio" name="ot3"> Áno <br>
+				  <input id="3.2" type="radio" name="ot3"> Skôr áno <br>
+				  <input id="3.3" type="radio" name="ot3"> Niečo medzi <br> 
+				  <input id="3.4" type="radio" name="ot3"> Skôr nie <br>
+				  <input id="3.5" type="radio" name="ot3"> Nie <br>
+			  </fieldset>
+
+			  <br>
+
+			  <fieldset id="otazka4">
+			  	<p class="otazka">Väčšina mojich kamarátov ma nižšie IQ ako ondatra pižmová.</p>
+			    <input id="4.1" type="radio" name="ot4"> Áno <br>
+				  <input id="4.2" type="radio" name="ot4"> Skôr áno <br>
+				  <input id="4.3" type="radio" name="ot4"> Niečo medzi <br> 
+				  <input id="4.4" type="radio" name="ot4"> Skôr nie <br>
+				  <input id="4.5" type="radio" name="ot4"> Nie <br>
+			  </fieldset>
+
+			  <br>
+
+			  <fieldset id="otazka5">
+			  	<p class="otazka">Sokoliarske kamikaze orgie ma nepriťahujú.</p>
+			    <input id="5.1" type="radio" name="ot5"> Áno <br>
+				  <input id="5.2" type="radio" name="ot5"> Skôr áno <br>
+				  <input id="5.3" type="radio" name="ot5"> Niečo medzi <br> 
+				  <input id="5.4" type="radio" name="ot5"> Skôr nie <br>
+				  <input id="5.5" type="radio" name="ot5"> Nie <br>
+			  </fieldset>
+
+			  <br>
+
+			  <fieldset id="otazka6">
+			  	<p class="otazka">Považujem sa za človekoa, ktorý rieši konflikty sánkovačkou.</p>
+			    <input id="6.1" type="radio" name="ot6"> Áno <br>
+				  <input id="6.2" type="radio" name="ot6"> Skôr áno <br>
+				  <input id="6.3" type="radio" name="ot6"> Niečo medzi <br> 
+				  <input id="6.4" type="radio" name="ot6"> Skôr nie <br>
+				  <input id="6.5" type="radio" name="ot6"> Nie <br>
+			  </fieldset>
+
+			  <br>
+
+			  <fieldset id="otazka7">
+			  	<p class="otazka">Pri pohľade na prázdne papiere zmätene opakujem "To čo je toto?"</p>
+			    <input id="7.1" type="radio" name="ot7"> Áno <br>
+				  <input id="7.2" type="radio" name="ot7"> Skôr áno <br>
+				  <input id="7.3" type="radio" name="ot7"> Niečo medzi <br> 
+				  <input id="7.4" type="radio" name="ot7"> Skôr nie <br>
+				  <input id="7.5" type="radio" name="ot7"> Nie <br>
+			  </fieldset>
+
+			  <br>
+
+			  <div  align="center">
+				  <button id="btnSubmit" type="button" onclick="odoslat()" > Odoslať </button>
+				  <p> (c) Svartur 2019 </p>
+				</div>
+
+			</form>
+
+			
+			<div id="vysledky" style="max-width: 600px; display: none;" align="center">
+				<h1 style="font-size: 30px; margin: 5px">Tvoje skóre:</h1>
+				<h2 style="font-size: 90px; margin: 5px" id="perce">0%</h2>
+				<h3 style="font-size: 30px; margin: 5px">pravdepodobnosť, že si</h3>
+				<h4 style="font-size: 90px; margin: 5px">Prapaštier</h4>
+
+				<img src="prapastier.png" style="width: 60%; height: auto">
+				<br>
+
+				<button id="btnReload" type="button" onclick="refresh()" style="margin-top: 60px">Vyplniť test znovu</button>
+				<p> (c) Svartur 2019 </p>
+			</div>
+
+		</div>
+
+	</body>
 </html>
