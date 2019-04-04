@@ -2,5 +2,12 @@
 
 
 .cisloOtazky {
-	font-size: 20vw
+	font-size: 5vw
+}
+
+.content {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  padding: 10px;
 }

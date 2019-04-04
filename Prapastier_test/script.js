@@ -4,7 +4,7 @@ function odoslat() {
 
 	document.getElementById("btnSubmit").style.display = "none";
 	document.getElementById("dotaznik").style.display = "none";
-
+	document.getElementById("vysledky").style.display = "block";
 	
 
 }
