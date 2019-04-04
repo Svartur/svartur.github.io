@@ -1,0 +1,18 @@
+
+
+.otazka {
+	font-size: 24px;
+	margin-top: 5px;
+	margin-bottom: 10px
+}
+
+.radioOdpoved {
+	font-size: 18px;
+}
+
+.content {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  padding: 10px;
+}
