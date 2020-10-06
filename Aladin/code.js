@@ -3,7 +3,7 @@ console.log("Al Ladin running");
 
 
 function formChanged() {
-	var urlStatic = "http://www.shmu.sk/data/datanwp/v2/";
+	var urlStatic = "https://www.shmu.sk/data/datanwp/v2/";
 	var model, actual;
 
 	var forecastType = document.getElementById("forecastType").value;
@@ -106,8 +106,8 @@ function draw() {
 
 function crop(u) {
 	background(255);
-	var img = loadImage(u, function onLoad() {
-		var temperature = img.get(0, 43, 600, 144);
+	var img = loadImage(u, function onLoad(i) {
+		var temperature = i.get(0, 43, 600, 144);
 		image(temperature, 0, 0);
 	});
 
