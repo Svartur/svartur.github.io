@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Al Ladin</title>
+
+		<script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<script src="code.js"></script>
+	</head>
+
+
+	<body>
+		<h4>AL - LADIN</h4>
+
+		<form>
+			<label>Chcem</label>
+
+			<select id="forecastType" onchange="formChanged()">
+				<option value="2">predpoved na 2 dni</option>
+				<option value="3">predpoved na 3 dni</option>
+				<option value="8">predpoved na 8 dni</option>
+				<option value="10">predpoved na 10 dni</option>
+			</select>
+
+			<label>pre</label>
+
+			<select id="forecastLocation" onchange="formChanged()">
+				<optgroup label="A">
+					<option value="32299">Abraham</option>
+					<option value="32376">Aleksince</option>
+					<option value="32216">Andovce</option>
+				</optgroup>
+				<optgroup label="B">
+					<option value="31948">Bosany</option>
+					<option value="32468">Botany</option>
+					<option value="32124">Branc</option>
+					<option value="32737">Bratislava (centrum)</option>
+					<option value="31357">Bratislava (letisko)</option>
+					<option value="31176">Bratislava - Koliba</option>
+					<option value="31175">Bratislava - Lamac</option>
+					<option value="32628">Brehy</option>
+					<option value="31963">Brezovica</option>
+					<option value="32098">Brodske</option>
+					<option value="32160">Brusno</option>
+					<option value="32439">Brvniste</option>
+				</optgroup>
+				<optgroup label="C">
+					<option value="32597">Cajkov</option>
+					<option value="32555">Cakajovce</option>
+					<option value="32659">Cata</option>
+					<option value="32225">Cebovce</option>
+					<option value="32414">Cecejovce</option>
+				</optgroup>
+				<optgroup label="D">
+					<option value="32543">Dlhe Klcovo</option>
+					<option value="32695">Dlhe nad Cirochou</option>
+					<option value="32328">Dlhe Pole</option>
+					<option value="32214">Dolna Marikova</option>
+					<option value="32497">Dolna Streda</option>
+					<option value="32704">Dolna Strehova</option>
+					<option value="32313">Dolna Suca</option>
+					<option value="32174">Dolna Tizina</option>
+					<option value="32492">Dolne Kockovce</option>
+				</optgroup>
+				<optgroup label="V">
+					<option value="32531">Valaliky</option>
+					<option value="32321">Valaska</option>
+					<option value="32236">Valaska Bela</option>
+					<option value="31439">Valca</option>
+					<option value="32115">Varin</option>
+					<option value="32569">Vavrecka</option>
+					<option value="31492">Vazec</option>
+					<option value="31516">Vcelare</option>
+					<option value="32676">Vechec</option>
+					<option value="32461">Velka Ida</option>
+					<option value="31537">Velka Kycera</option>
+					<option value="32683">Velka Lehota</option>
+					<option value="32419">Velka Lomnica</option>
+					<option value="31959">Velka Maca</option>
+				</optgroup>
+				<optgroup label="Z">
+					<option value="31920">Zilina</option>
+					<option value="32240">Zirany</option>
+					<option value="32318">Zlate Klasy</option>
+					<option value="31400">Zlate Moravce</option>
+					<option value="32534">Zlatna na Ostrove</option>
+					<option value="31580">Zochova Chata - Piesok</option>
+					<option value="31940">Zohor</option>
+					<option value="32054">Zuberec</option>
+					<option value="32394">Zubrohlava</option>
+					<option value="32498">Zupcany</option>
+					<option value="31453">Zvolen</option>
+					<option value="32314">Zvolenska Slatina</option>
+				</optgroup>
+			</select>
+		</form>
+
+		<br>
+
+		<img src="" id="img">
+
+	</body>
+
+</html>
