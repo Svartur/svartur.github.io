@@ -124,33 +124,58 @@
 
   <body>
 
-    <div class="headerDiv">
-      <h1 class="vitaj">
-        VITAJ
-      </h1>
-    </div>
 
+    <div id="main">
 
-    <div id="helpOverlay" onclick="hideHelpOverlay()">
-      <div class="helpWindow">
-        <p class="helpText">
-          PRIPOJ SA  
-        </p>
-
-        <p class="helpText">
-          Náhodná WiFi, ktorá ukrýva malé tajomstvo. Minimálne Ťa tu zakaždým čaká pekná animácia. A nezabudni zanechať odkaz.
-        </p>
-
-        <p class="helpText">
-          Pripoj sa aj nabudúce  
-        </p>
+      <div class="headerDiv">
+        <h1 class="vitaj">
+          VITAJ
+        </h1>
       </div>
+
+
+      <div id="helpOverlay" onclick="hideHelpOverlay()">
+        <div class="helpWindow">
+          <p class="helpText">
+            PRIPOJ SA  
+          </p>
+
+          <p class="helpText">
+            Náhodná WiFi, ktorá ukrýva malé tajomstvo. Minimálne Ťa tu zakaždým čaká pekná animácia. A nezabudni zanechať odkaz.
+          </p>
+
+          <p class="helpText">
+            Pripoj sa aj nabudúce  
+          </p>
+        </div>
+      </div>
+
+
+      <div class="footerDiv">
+        <input type="button" value="ZANECHAJ ODKAZ" class="buttonPridajOdkaz" onclick="showOdkaz()">
+        <input type="button" value="?" class="buttonHelp" onclick="showHelpOverlay()">
+      </div>
+
     </div>
 
 
-    <div class="footerDiv">
-      <input type="button" value="ZANECHAJ ODKAZ" class="buttonPridajOdkaz">
-      <input type="button" value="?" class="buttonHelp" onclick="showHelpOverlay()">
+
+
+
+    <div id="odkaz" style="display: none;">
+      <div class="headerDiv">
+        <h1 class="vitaj">
+          ODKAZ
+        </h1>
+      </div>
+
+
+
+
+      <div class="footerDiv">
+        <input type="button" value="ODOSLAŤ" class="buttonPridajOdkaz">
+        <input type="button" value="< < <" class="buttonHelp" onclick="hideOdkaz()">
+      </div>
     </div>
 
 
@@ -159,6 +184,7 @@
 
 
     <script>
+
       function showHelpOverlay() {
         document.getElementById("helpOverlay").style.display = "flex";
       }
@@ -166,7 +192,20 @@
       function hideHelpOverlay() {
         document.getElementById("helpOverlay").style.display = "none";
       }
-</script>
+
+      function showOdkaz() {
+        document.getElementById("main").style.display = "none";
+        document.getElementById("odkaz").style.display = "block";
+      }
+
+      function hideOdkaz() {
+        document.getElementById("main").style.display = "block";
+        document.getElementById("odkaz").style.display = "none";
+      }
+
+    
+
+    </script>
 
 
 
