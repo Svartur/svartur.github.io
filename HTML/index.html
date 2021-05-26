@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <style>
+
+      html{
+        width:100%;
+        height:100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      body{
+        margin: 0;
+        padding: 0;
+        width:100%;
+        height:100%;
+        background-color:#666;
+      }
+
+      .headerDiv {
+        background-color: #333;
+        top: 0;
+        position: fixed;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        border: 1em;
+        width: 100%;
+        text-align: center;
+      }
+
+      .vitaj {
+        color: #fff;
+        font-size: 2em;
+        margin: 0px
+        font-weight: bold;
+      }
+
+      .footerDiv {
+        background-color: #333;
+        bottom: 0;
+        position: fixed;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        border: 1em;
+        width: 100%;
+      }
+
+      .buttonPridajOdkaz {
+        float: right;
+        margin-right: 1em;
+        background-color: #333; 
+        color: #fff;
+        border: solid 0.2em;
+        border-color: #fff;
+        padding: 0.5em;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1em;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .buttonHelp {
+        float: left;
+        margin-left: 1em;
+        background-color: #333; 
+        color: #fff;
+        border: solid 0.2em;
+        border-color: #fff;
+        padding: 0.5em;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1em;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      #helpOverlay {
+        position: fixed;
+        display: none;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.75);
+        z-index: 2;
+        justify-content: center;
+      }
+
+      .helpWindow {
+        width: auto;
+        max-width: 70%;
+        height: auto;
+        padding: 1em;
+        background-color: #999;
+        vertical-align: center;
+        margin: auto;
+      }
+
+      .helpText {
+        margin: 0,5em;
+        color: #000;
+        font-size: 1,5em;
+        font-weight: bold;
+      }
+
+    </style>
+
+
+  </head>
+
+
+
+  <body>
+
+    <div class="headerDiv">
+      <a class="vitaj">
+        VITAJ
+      </a>
+    </div>
+
+
+    <div id="helpOverlay" onclick="hideHelpOverlay()">
+      <div class="helpWindow">
+        <p class="helpText">
+          PRIPOJ SA  
+        </p>
+
+        <p class="helpText">
+          Náhodná WiFi, ktorá ukrýva malé tajomstvo. Minimálne Ťa tu zakaždým čaká pekná animácia. A nezabudni zanechať odkaz.
+        </p>
+
+        <p class="helpText">
+          Pripoj sa aj nabudúce  
+        </p>
+      </div>
+    </div>
+
+
+    <div class="footerDiv">
+      <input type="button" value="ZANECHAJ ODKAZ" class="buttonPridajOdkaz">
+      <input type="button" value="?" class="buttonHelp" onclick="showHelpOverlay()">
+    </div>
+
+
+
+
+
+
+    <script>
+      function showHelpOverlay() {
+        document.getElementById("helpOverlay").style.display = "flex";
+      }
+
+      function hideHelpOverlay() {
+        document.getElementById("helpOverlay").style.display = "none";
+      }
+</script>
+
+
+
+  </body>
+
+
+</html>
