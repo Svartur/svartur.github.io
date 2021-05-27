@@ -5,6 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
+
+  <script>
+
+      function showHelpOverlay() {
+        document.getElementById("helpOverlay").style.display = "flex";
+      }
+
+      function hideHelpOverlay() {
+        document.getElementById("helpOverlay").style.display = "none";
+      }
+
+      function showOdkaz() {
+        document.getElementById("main").style.display = "none";
+        document.getElementById("odkaz").style.display = "block";
+      }
+
+      function hideOdkaz() {
+        document.getElementById("main").style.display = "block";
+        document.getElementById("odkaz").style.display = "none";
+      }
+
+
+
+      function formChange() {
+        let odkaz = document.getElementById("odkaz"); 
+        let total = document.getElementById("total");       
+
+        let length = odkaz.value.length;
+        total.innerHTML = length + "/5000"; 
+
+        console.log(length);
+      }
+
+    
+
+    </script>
+
+
     <style>
 
       html{
@@ -115,6 +153,34 @@
         font-family: monospace;
       }
 
+      .label {
+        margin: 1em;
+        color: #fff;
+        font-size: 2em;
+        font-weight: bold;
+        font-family: monospace;
+      }
+
+      .formular {
+        margin: auto; 
+      }
+
+
+      .txt-message {
+        margin: auto;
+        display: block;
+        width: calc(100% - 2em);
+        resize: none;
+        outline: none;
+        background-color: #fff;
+        border: 1px solid #000;
+        padding: 5px;
+        box-sizing: border-box;
+        font-family: monospace;
+        font-size: 2em;
+      }
+
+
     </style>
 
 
@@ -163,13 +229,17 @@
 
 
     <div id="odkaz" style="display: none;">
-      <div class="headerDiv">
-        <h1 class="vitaj">
-          ODKAZ
-        </h1>
-      </div>
 
 
+      <form action="/submit" method="post" class="formular">
+
+          <p class="label">Napíš odkaz:</p>
+
+          <textarea name="message" id="odkaz" rows="10" maxlength="5000" onkeydown="formChange()" onkeyup="formChange()" class="txt-message"></textarea>
+
+          <p id="total" class="label">0/5000</p>
+
+        </form>
 
 
       <div class="footerDiv">
@@ -180,32 +250,6 @@
 
 
 
-
-
-
-    <script>
-
-      function showHelpOverlay() {
-        document.getElementById("helpOverlay").style.display = "flex";
-      }
-
-      function hideHelpOverlay() {
-        document.getElementById("helpOverlay").style.display = "none";
-      }
-
-      function showOdkaz() {
-        document.getElementById("main").style.display = "none";
-        document.getElementById("odkaz").style.display = "block";
-      }
-
-      function hideOdkaz() {
-        document.getElementById("main").style.display = "block";
-        document.getElementById("odkaz").style.display = "none";
-      }
-
-    
-
-    </script>
 
 
 
