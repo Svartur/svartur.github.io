@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Stream Test</title>
+
+
+
+
+
+    <style>
+
+        body {
+            margin: 0px;
+            font-family: Arial;
+            background-color: #ffffff;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .header {
+            height: wrap-content;
+            padding: 6px;
+            background-color: #EA5829;
+            color: #ffffff;
+            justify-content: center;
+        }
+
+        h1 {
+            font-family: Arial;
+            font-weight: bold;
+            font-size: 24px;
+            text-align: center;
+            margin: 10px;
+        }
+
+        p {
+            font-family: Arial;
+            font-size: 16px;
+            text-align: center;
+            margin: 3px;
+            margin-top: 6px;
+            margin-bottom: 6px;
+        }
+
+        .stream-cards-layout {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 6px;
+            margin-top: 24px;
+            margin-bottom: 6px;
+            padding: 0px;
+        }
+
+        .stream-card {
+            width: 20%;
+            min-width: 350px;
+            height: fit-content;
+            margin: 6px;
+            background-color: #d4d1fa;
+            padding: 12px;
+            padding-bottom: 6px;
+            padding-top: 6px;
+            box-sizing: border-box;
+
+        }
+
+        img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background-color: #e2e2e2;
+            display: block;
+        }
+    
+        h2 {
+            font-family: Arial;
+            font-size: 20px;
+            text-align: center;
+            color: #333;
+            margin-top: 3px;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        .button-container-evenly {
+            margin-top: 0px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        .button-container-center {
+            margin-top: 0px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        button {
+            font-family: Arial;
+            font-weight: bold;
+            cursor: pointer;
+            border: 0px;
+            font-size: 16px;
+            padding: 6px 10px;
+            margin: 6px;
+            margin-top: 6px;
+        }
+
+        .button-flash-on {                        
+            background-color: #5bd75b;
+            margin-right: 3px;
+        }
+
+        .button-flash-on:hover {
+            background-color: #2db92d;
+        }
+
+        .button-flash-on:active {
+            background-color: #ffbf00;
+        }
+
+        .button-flash-off {
+            background-color: #ff5c33;
+            margin-left: 3px;
+        }
+
+        .button-flash-off:hover {
+            background-color: #e62e00;
+        }
+
+        .button-flash-off:active {
+            background-color: #ffbf00;
+        }
+
+        .button-update {
+            background-color: #4dafff;
+            margin-left: 3px;
+        }
+
+        .button-update:hover {
+            background-color: #4294d6;
+        }
+
+        .button-update:active {
+            background-color: #ffbf00;
+        }
+
+        hr {
+          border: 1px solid #999999;
+          margin: 3px;
+        }
+
+
+    </style>
+
+
+
+
+
+
+
+
+    <script>
+
+      function setFlash(url, button) {
+        enableAllButtons(false);
+        sendHttpRequest(url, button);
+        enableAllButtons(true);
+      }
+
+
+
+      function sendHttpRequest(url, button) {
+        var originalBtnText = button.innerText
+
+        fetch(url, {signal: AbortSignal.timeout(1500)})
+          .then(response => {
+            console.log('Response:', response);
+            if (response.ok) {
+              console.log('Request successful');
+              button.innerHTML = "OK";
+              setTimeout(function(){ button.innerHTML = originalBtnText; }, 1500);
+            } 
+          })
+          .catch(error => {
+            console.log('Request unsuccessful', url);
+            button.innerHTML = "ERROR";
+            setTimeout(function(){ button.innerHTML = originalBtnText; }, 1500); 
+          });
+      }
+
+
+
+      function enableAllButtons(en) {
+        const buttons = document.getElementsByTagName('button');
+        Array.from(buttons).forEach(button => {
+          button.disabled = !en;
+        });
+      }
+
+      
+
+      async function fetchVersion(label) {
+        const ip = label.getAttribute('ip-address'); 
+
+        try {
+          const response = await fetch(`http://${ip}/version`);
+          if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          const version = await response.text();
+          label.textContent = `FW version: ${version}`;
+        } 
+        catch (error) {
+          console.error(`Error fetching version from ${ip}:`, error);
+          label.textContent = `FW version: N/A`;
+        }
+      }
+
+
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const ipLabels = document.querySelectorAll('p[ip-address]');
+
+        ipLabels.forEach(label => {
+          fetchVersion(label);
+        });
+      });
+
+
+    </script>
+</head>
+
+
+
+
+
+
+
+
+<body>
+  <div class="header">
+      <h1>Camera Stram Test automation simplification acceleration straightforwardation page v2</h1>
+      <p>Connect via Ethernet or SSH</p>
+  </div>
+
+
+
+  <div class="stream-cards-layout">
+
+    <div class="stream-card">
+      <p>Pillar</p>
+      <h2>192.168.10.38</h2>
+      <p ip-address="192.168.10.38">FW version: loading</p>
+      <img src="http://192.168.10.38/stream" alt="Stream unavailable">
+      <p>Normal orientation</p>
+      <hr>
+      <div class="button-container-evenly">
+        <button class="button-flash-on" onclick="sendHttpRequest('http://192.168.10.38/flash?led0=255&led1=255', this)">Flash ON</button>
+        <button class="button-flash-off" onclick="sendHttpRequest('http://192.168.10.38/flash?led0=0&led1=0', this)">Flash OFF</button>
+      </div>
+      <hr>
+      <div class="button-container-evenly">
+        <button class="button-update" onclick="window.location.href='http://192.168.10.38/update';">FW update</button>
+        <button class="button-update" onclick="sendHttpRequest('http://192.168.10.38/device_config?camera_mode=pillar', this)">Set pillar mode</button>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <div class="stream-cards-layout">
+    <div class="stream-card">
+      <p>Shift 0</p>
+      <h2>192.168.10.20</h2>
+      <p ip-address="192.168.10.20">FW version: loading</p>
+      <img src="http://192.168.10.20/stream" alt="Stream unavailable">
+      <p>Normal orientation</p>
+      <hr>
+      <div class="button-container-evenly">
+        <button class="button-flash-on" onclick="sendHttpRequest('http://192.168.10.20/flash?led0=255&led1=255', this)">Flash ON</button>
+        <button class="button-flash-off" onclick="sendHttpRequest('http://192.168.10.20/flash?led0=0&led1=0', this)">Flash OFF</button>
+      </div>
+      <hr>
+      <div class="button-container-evenly">
+        <button class="button-update" onclick="window.location.href='http://192.168.10.20/update';">FW update</button>
+        <button class="button-update" onclick="sendHttpRequest('http://192.168.10.20/device_config?camera_mode=drawer', this)">Set drawer mode</button>
+      </div>
+    </div>
+
+    <div class="stream-card">
+      <p>Shift 1</p>
+      <h2>192.168.10.21</h2>
+      <p ip-address="192.168.10.21">FW version: loading</p>
+      <img src="http://192.168.10.21/stream" alt="Stream unavailable">
+      <p>Normal orientation</p>
+      <hr>
+      <div class="button-container-evenly">
+        <button class="button-flash-on" onclick="sendHttpRequest('http://192.168.10.21/flash?led0=255&led1=255', this)">Flash ON</button>
+        <button class="button-flash-off" onclick="sendHttpRequest('http://192.168.10.21/flash?led0=0&led1=0', this)">Flash OFF</button>
+      </div>
+      <hr>
+      <div class="button-container-evenly">
+        <button class="button-update" onclick="window.location.href='http://192.168.10.21/update';">FW update</button>
+        <button class="button-update" onclick="sendHttpRequest('http://192.168.10.21/device_config?camera_mode=drawer', this)">Set drawer mode</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="stream-cards-layout">
+    <div class="stream-card">
+      <p>Tray 0</p>
+      <h2>192.168.10.22</h2>
+      <p ip-address="192.168.10.22">FW version: loading</p>     
+      <img src="http://192.168.10.22/stream" alt="Stream unavailable">
+      <p>Normal orientation</p>
+      <hr>
+      <div class="button-container-evenly">
+        <button class="button-flash-on" onclick="sendHttpRequest('http://192.168.10.22/flash?led0=255&led1=255', this)">Flash ON</button>
+        <button class="button-flash-off" onclick="sendHttpRequest('http://192.168.10.22/flash?led0=0&led1=0', this)">Flash OFF</button>
+      </div>
+      <hr>
+      <div class="button-container-evenly">
+        <button class="button-update" onclick="window.location.href='http://192.168.10.22/update';">FW update</button>
+        <button class="button-update" onclick="sendHttpRequest('http://192.168.10.22/device_config?camera_mode=drawer', this)">Set drawer mode</button>
+      </div>
+    </div>
+
+    <div class="stream-card">
+      <p>Tray 1</p>
+      <h2>192.168.10.23</h2>
+      <p ip-address="192.168.10.23">FW version: loading</p>     
+      <img src="http://192.168.10.23/stream" alt="Stream unavailable">
+      <p>Normal orientation</p>
+      <hr>
+      <div class="button-container-evenly">
+        <button class="button-flash-on" onclick="sendHttpRequest('http://192.168.10.23/flash?led0=255&led1=255', this)">Flash ON</button>
+        <button class="button-flash-off" onclick="sendHttpRequest('http://192.168.10.23/flash?led0=0&led1=0', this)">Flash OFF</button>
+      </div>
+      <hr>
+      <div class="button-container-evenly">
+        <button class="button-update" onclick="window.location.href='http://192.168.10.23/update';">FW update</button>
+        <button class="button-update" onclick="sendHttpRequest('http://192.168.10.23/device_config?camera_mode=drawer', this)">Set drawer mode</button>
+      </div>
+    </div>
+  </div>
+
+  <p>.</p>
+
+    
+
+</body>
+</html>
