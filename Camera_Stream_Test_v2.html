@@ -207,7 +207,7 @@
         const ip = label.getAttribute('ip-address'); 
 
         try {
-          const response = await fetch(`http://${ip}/version`);
+          const response = await fetch(`https://${ip}/version`);
           if (!response.ok) {
               throw new Error(`HTTP error! Status: ${response.status}`);
           }
@@ -255,17 +255,17 @@
       <p>Pillar</p>
       <h2>192.168.10.38</h2>
       <p ip-address="192.168.10.38">FW version: loading</p>
-      <img src="http://192.168.10.38/stream" alt="Stream unavailable">
+      <img src="https://192.168.10.38/stream" alt="Stream unavailable">
       <p>Normal orientation</p>
       <hr>
       <div class="button-container-evenly">
-        <button class="button-flash-on" onclick="sendHttpRequest('http://192.168.10.38/flash?led0=255&led1=255', this)">Flash ON</button>
-        <button class="button-flash-off" onclick="sendHttpRequest('http://192.168.10.38/flash?led0=0&led1=0', this)">Flash OFF</button>
+        <button class="button-flash-on" onclick="sendHttpRequest('https://192.168.10.38/flash?led0=255&led1=255', this)">Flash ON</button>
+        <button class="button-flash-off" onclick="sendHttpRequest('https://192.168.10.38/flash?led0=0&led1=0', this)">Flash OFF</button>
       </div>
       <hr>
       <div class="button-container-evenly">
-        <button class="button-update" onclick="window.location.href='http://192.168.10.38/update';">FW update</button>
-        <button class="button-update" onclick="sendHttpRequest('http://192.168.10.38/device_config?camera_mode=pillar', this)">Set pillar mode</button>
+        <button class="button-update" onclick="window.location.href='https://192.168.10.38/update';">FW update</button>
+        <button class="button-update" onclick="sendHttpRequest('https://192.168.10.38/device_config?camera_mode=pillar', this)">Set pillar mode</button>
       </div>
     </div>
 
